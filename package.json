@@ -1,0 +1,25 @@
+{
+  "name": "learner-koa-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "koa-router": "^7.4.0",
+    "koa": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpraval1/learner-koa-api.git"
+  },
+  "author": "Pravallika Rikhala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpraval1/learner-koa-api/issues"
+  },
+  "homepage": "https://github.com/rpraval1/learner-koa-api#readme"
+}
