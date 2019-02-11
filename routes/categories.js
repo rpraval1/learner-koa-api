@@ -86,4 +86,29 @@ router.put(`${BASE_URL}/:id`, async (ctx) => {
   }
 });
 
+router.delete(`${BASE_URL}/:id`, async (ctx) => {
+  try {
+    const category = await queries.deleteCategory(ctx.params.id, ctx.request.body);
+    if (category.length) {
+      ctx.status = 200;
+      ctx.body = {
+        status: 'Success',
+        body: category
+      };
+    } else {
+      ctx.status = 404;
+      ctx.body = {
+        status: 'error',
+        body: 'Category does not exist.'
+      };
+    }
+  } catch (err) {
+    ctx.status = 400,
+    ctx.body = {
+      status: 'error',
+      body: err.message || 'Sorry, an error has occurred.'
+    };
+  }
+});
+
 module.exports = router;

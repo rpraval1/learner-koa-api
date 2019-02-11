@@ -24,9 +24,17 @@ function updateCategory(id, category) {
     .returning('*');
 }
 
+function deleteCategory(id) {
+    return knex('categories')
+    .delete()
+    .where({id: parseInt(id)})
+    .returning('*');
+}
+
 module.exports = {
     getAllCategories,
     getSingleCategory,
     addCategory,
-    updateCategory
+    updateCategory,
+    deleteCategory
 };
