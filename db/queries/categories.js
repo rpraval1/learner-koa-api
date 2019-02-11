@@ -11,7 +11,22 @@ function getSingleCategory(id) {
     .where({id: parseInt(id)});
 }
 
+function addCategory(category) {
+    return knex('categories')
+    .insert(category)
+    .returning('*');
+}
+
+function updateCategory(id, category) {
+    return knex('categories')
+    .update(category)
+    .where({id: parseInt(id)})
+    .returning('*');
+}
+
 module.exports = {
     getAllCategories,
-    getSingleCategory
+    getSingleCategory,
+    addCategory,
+    updateCategory
 };
